@@ -40,8 +40,6 @@ void SerialConsole::printMenu() {
     Logger::console("   LOGLEVEL=%i - set log level (0=debug, 1=info, 2=warn, 3=error, 4=off)", Logger::getLogLevel());
     Logger::console("   CANSPEED=%i - set first CAN bus speed", settings.canSpeed);
 
-    Logger::console("\nSWITCHBOX CONFIGURATION CONTROLS\n");
-    Logger::console("PIN=%i - Toggle contactor on and off (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)");
 
 }
 
@@ -147,62 +145,6 @@ void SerialConsole::handleConfigCmd() {
             break;
         } 
         needEEPROMWrite = true;
-    } else if (cmdString == String("PIN")) {
-        switch (newValue) {
-          case 33: 
-                  digitalWrite(33, LOW);
-                  delay(750);
-                  digitalWrite(33, HIGH);
-                  break;
-          case 34:
-                  digitalWrite(34, LOW);
-                  delay(750);
-                  digitalWrite(34, HIGH);
-                  break;
-          case 35:
-                  digitalWrite(35, LOW);
-                  delay(750);
-                  digitalWrite(35, HIGH);
-                  break;
-          case 36:
-                  digitalWrite(36, LOW);
-                  delay(750);
-                  digitalWrite(36, HIGH);
-                  break;
-          case 37:
-                  digitalWrite(37, LOW);
-                  delay(750);
-                  digitalWrite(37, HIGH);
-                  break;
-          case 38:
-                  digitalWrite(38, LOW);
-                  delay(750);
-                  digitalWrite(38, HIGH);
-                  break;
-          case 39:
-                  digitalWrite(39, LOW);
-                  delay(750);
-                  digitalWrite(39, HIGH);
-                  break;
-          case 41:
-                  digitalWrite(41, LOW);
-                  delay(750);
-                  digitalWrite(41, HIGH);
-                  break;
-          case 43:
-                  digitalWrite(43, LOW);
-                  delay(750);
-                  digitalWrite(43, HIGH);
-                  break;
-          case 49:
-                  digitalWrite(49, LOW);
-                  delay(750);
-                  digitalWrite(49, HIGH);
-                  break;
-          default: 
-                  break;
-          
-        }       
     } else {
         Logger::console("Unknown command");
     }
@@ -226,4 +168,3 @@ void SerialConsole::handleShortCmd() {
         break;
     }
 }
-

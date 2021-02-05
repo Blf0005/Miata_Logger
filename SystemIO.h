@@ -13,6 +13,7 @@ public:
     void setup();
     bool readInput(int pin);
     void setOutput(int pin, OUTPUTSTATE state);
+    int readAnalogInput(int pin);
     
 private:
 
